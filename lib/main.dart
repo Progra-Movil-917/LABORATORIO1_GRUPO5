@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ParentWidget(),
+    );
+  }
+}
+
+class ParentWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Parent Widget')),
+      body: ChildWidget(text: 'Hello from Parent'),
+    );
+  }
+}
+
+class ChildWidget extends StatelessWidget {
+  final String text;
+
+  ChildWidget({required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return Center(child: Text(text));
   }
 }
