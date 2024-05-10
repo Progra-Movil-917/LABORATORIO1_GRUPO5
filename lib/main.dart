@@ -9,10 +9,32 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar( 
+          title: const Text('Laboratorio 1'),
+          backgroundColor: Color.fromARGB(255, 79, 164, 228),
+        ),
+        body: const Center(
+          child: Text('Hello World!')
+        ),
+        drawer: Drawer(
+            child: ListView(
+              children: [
+                ListTile(
+                  title: const Text('Primer item'),
+                  onTap: () {},
+          ),
+              ListTile(
+                  title: const Text('Segundo item'),
+                  onTap: () {},
+              ),
+              ListTile(
+                  title: const Text('Tercer item'),
+                  onTap: () {},
+              )
+        ],
+        )
         ),
       ),
     );
