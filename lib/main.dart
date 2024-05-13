@@ -32,7 +32,7 @@ class MainApp extends StatelessWidget {
           ),
               ListTile(
                   title: const Text('Segundo item'),
-                  onTap: () {},
+                  onTap: () { },
               ),
               ListTile(
                   title: const Text('Tercer item'),
