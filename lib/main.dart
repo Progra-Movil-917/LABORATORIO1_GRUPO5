@@ -10,15 +10,20 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar( 
-          title: const Text('Laboratorio 1'),
-          backgroundColor: Color.fromARGB(255, 79, 164, 228),
-        ),
-        body: const Center(
-          child: Text('Hello World!')
-        ),
-        drawer: Drawer(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ],
+            ),
+            title: const Text('Demostracion de Tabs'),
+          ),
+          drawer: Drawer(
             child: ListView(
               children: [
                 ListTile(
@@ -34,7 +39,14 @@ class MainApp extends StatelessWidget {
                   onTap: () {},
               )
         ],
-        )
+        ), ),
+          body: const TabBarView(
+            children: [
+              Icon(Icons.directions_car),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+            ], 
+          ),
         ),
       ),
     );
