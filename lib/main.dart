@@ -23,12 +23,29 @@ class MainApp extends StatelessWidget {
             ),
             title: const Text('Demostracion de Tabs'),
           ),
+          drawer: Drawer(
+            child: ListView(
+              children: [
+                ListTile(
+                  title: const Text('Primer item'),
+                  onTap: () {},
+          ),
+              ListTile(
+                  title: const Text('Segundo item'),
+                  onTap: () {},
+              ),
+              ListTile(
+                  title: const Text('Tercer item'),
+                  onTap: () {},
+              )
+        ],
+        ), ),
           body: const TabBarView(
             children: [
               Icon(Icons.directions_car),
               Icon(Icons.directions_transit),
               Icon(Icons.directions_bike),
-            ],
+            ], 
           ),
         ),
       ),
