@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    const MaterialApp(
+      title: 'Returning Data',
+      home: HomeScreen(),
+    ),
+  );
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
